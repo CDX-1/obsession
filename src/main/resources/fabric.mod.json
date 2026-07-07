@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "id": "obsession",
+  "version": "${version}",
+  "name": "Obsession",
+  "description": "",
+  "authors": [],
+  "contact": {},
+  "license": "All-Rights-Reserved",
+  "icon": "assets/obsession/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "fabric-datagen": [
+      "world.smallwoken.obsession.client.ObsessionDataGenerator"
+    ],
+    "client": [
+      "world.smallwoken.obsession.client.ObsessionClient"
+    ],
+    "main": [
+      "world.smallwoken.obsession.Obsession"
+    ]
+  },
+  "mixins": [
+    "obsession.mixins.json",
+    {
+      "config": "obsession.client.mixins.json",
+      "environment": "client"
+    }
+  ],
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "fabric-api": "*",
+    "minecraft": "${minecraft_version}"
+  }
+}
